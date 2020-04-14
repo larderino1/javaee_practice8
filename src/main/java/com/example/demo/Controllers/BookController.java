@@ -17,13 +17,13 @@ public class BookController {
     private BookService bookService;
 
     @ResponseBody
-    @GetMapping("/books_list") //change books on books_list
+    @GetMapping("/books_list")
     public List<BookEntity> getAll(){
         return bookService.findAll();
     }
 
     @ResponseBody
-    @GetMapping("/search") //change book-search on search
+    @GetMapping("/search") 
     public List<BookEntity> getAllByTitleOrIsbn(@RequestParam("param") String param){
         return bookService.findAllByIsbnOrTitle(param, param);
     }
