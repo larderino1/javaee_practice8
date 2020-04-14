@@ -19,27 +19,28 @@ import org.hibernate.annotations.NamedQuery;
 @ToString
 @NamedQueries({
         @NamedQuery(query = "SELECT book FROM BookEntity book WHERE book.author = :author", name = BookEntity.FIND_BY_AUTHOR),
-        @NamedQuery(query = "SELECT book FROM BookEntity book WHERE book.ISBN = :ISBN", name = BookEntity.FIND_BY_ISBN),
-        @NamedQuery(query = "SELECT book FROM BookEntity book WHERE book.name = :name", name = BookEntity.FIND_BY_NAME)
+        @NamedQuery(query = "SELECT book FROM BookEntity book WHERE book.isbn = :isbn", name = BookEntity.FIND_BY_ISBN),
+        @NamedQuery(query = "SELECT book FROM BookEntity book WHERE book.title = :title", name = BookEntity.FIND_BY_TITLE)
 })
 public class BookEntity {
 
     public static final String FIND_BY_AUTHOR = "BookEntity.FIND_BY_AUTHOR";
     public static final String FIND_BY_ISBN = "BookEntity.FIND_BY_ISBN";
-    public static final String FIND_BY_NAME = "BookEntity.FIND_BY_NAME";
+    public static final String FIND_BY_TITLE = "BookEntity.FIND_BY_TITLE";
 
     @Id
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
 
-    @Column(name = "book_name")
-    private String name;
+    @Column(name = "title")
+    private String title;
 
     @Column(name = "author")
     private String author;
-    @Column(name = "ISBN")
-    private String ISBN;
+    @Column(name = "isbn")
+    private String isbn;
+
 
 
 }

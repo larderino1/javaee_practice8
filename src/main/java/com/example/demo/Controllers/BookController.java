@@ -23,8 +23,8 @@ public class BookController {
     }
 
     @ResponseBody
-    @GetMapping("/search") 
-    public List<BookEntity> getAllByTitleOrIsbn(@RequestParam("param") String param){
+    @GetMapping("/search")
+    public List<BookEntity> getAllByTitle(@RequestParam("param") String param){
         return bookService.findAllByIsbnOrTitle(param, param);
     }
 }
