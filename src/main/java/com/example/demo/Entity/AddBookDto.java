@@ -10,7 +10,7 @@ import lombok.ToString;
 @ToString
 @RequiredArgsConstructor(staticName = "get")
 public class AddBookDto {
-    private String title;
-    private String author;
-    private String isbn;
+    private final String title;
+    private final String author;
+    private final String isbn;
 }

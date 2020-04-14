@@ -14,17 +14,17 @@ import java.util.List;
 public class BookController {
 
     @Autowired
-    private BookService service;
+    private BookService bookService;
 
     @ResponseBody
     @GetMapping("/books_list") //change books on books_list
     public List<BookEntity> getAll(){
-        return service.findAll();
+        return bookService.findAll();
     }
 
     @ResponseBody
     @GetMapping("/search") //change book-search on search
     public List<BookEntity> getAllByTitleOrIsbn(@RequestParam("param") String param){
-        return service.findAllByIsbnOrTitle(param, param);
+        return bookService.findAllByIsbnOrTitle(param, param);
     }
 }
